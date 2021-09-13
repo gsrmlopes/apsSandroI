@@ -12,6 +12,20 @@ class SideMenu extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
+            // DrawerHeader(
+            //     child: Image.asset(
+            //   "caminho da imagem",
+            //   height:,
+            // )),
+            // DrawerListitem(
+            //   title: "Titulo",
+            //   icon: "Caminho do icone",
+            //   fntSz: 12,
+            // ),
+            // DrawerCustomSkill(
+            //   icons: [Icon(Icons.star), Icon(Icons.star_border)],
+            //   skillName: "Skill Name",
+            // ),
             DrawerHeader(
                 child: Image.asset(
               "images/self.png",
@@ -50,8 +64,108 @@ class SideMenu extends StatelessWidget {
                 fntSz: 18),
             DrawerListitem(
                 title: "CNH - B", icon: "images/carro.svg", fntSz: 18),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Skills Pessoais",
+              style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            DrawerCustomSkill(
+              icons: [
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star)
+              ],
+              skillName: "Liderança",
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            DrawerCustomSkill(
+              icons: [
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star)
+              ],
+              skillName: "Convivência em Grupo",
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            DrawerCustomSkill(
+              icons: [
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star_border)
+              ],
+              skillName: "Comunicação",
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            DrawerCustomSkill(
+              icons: [
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star_border)
+              ],
+              skillName: "Proatividade",
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            DrawerCustomSkill(
+              icons: [
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star),
+                Icon(Icons.star_border)
+              ],
+              skillName: "Adaptação a Mudanças",
+            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class DrawerCustomSkill extends StatelessWidget {
+  const DrawerCustomSkill({
+    Key? key,
+    required this.icons,
+    required this.skillName,
+  }) : super(key: key);
+  final List<Widget> icons;
+  final String skillName;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Text(
+            skillName,
+            style: TextStyle(fontSize: 20),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: icons,
+          ),
+        ],
       ),
     );
   }
@@ -83,5 +197,3 @@ class DrawerListitem extends StatelessWidget {
     );
   }
 }
-
-
